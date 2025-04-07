@@ -5,8 +5,9 @@ import STT
 import TTS
 import gemini
 import mongo
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 # Define the recordings directory path
 # Using absolute path to avoid any directory confusion

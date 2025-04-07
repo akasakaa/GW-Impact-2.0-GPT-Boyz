@@ -118,7 +118,7 @@
     
     <div id="recordings">
         <h2>Your Recordings</h2>
-        <!-- Recordings will be added here dynamically -->
+
     </div>
     
     <script>
@@ -152,56 +152,20 @@
 }
 
 
-            // Function to fetch and display existing recordings
-            async function loadRecordings() {
-                try {
-                    statusDisplay.textContent = 'Loading recordings...';
-                    const response = await fetch('/get_recordings');
-                    const data = await response.json();
-                    
-                    // Remove all recording items
-                    const recordingItems = recordingsContainer.querySelectorAll('.recording-item');
-                    recordingItems.forEach(item => item.remove());
-                    
-                    // Add each recording
-                    if (data.recordings && data.recordings.length > 0) {
-                        data.recordings.forEach(recording => {
-                            const recordingItem = document.createElement('div');
-                            recordingItem.className = 'recording-item';
-                            
-                            const recordingName = document.createElement('div');
-                            recordingName.textContent = recording.filename;
-                            
-                            const audioElement = document.createElement('audio');
-                            audioElement.controls = true;
-                            audioElement.src = recording.url;
-                            
-                            recordingItem.appendChild(recordingName);
-                            recordingItem.appendChild(audioElement);
-                            recordingsContainer.appendChild(recordingItem);
-                        });
-                        statusDisplay.textContent = 'Ready to record';
-                    } else {
-                        statusDisplay.textContent = 'No recordings found. Ready to record.';
-                    }
-                } catch (error) {
-                    console.error('Error loading recordings:', error);
-                    statusDisplay.textContent = 'Error loading recordings. Ready to record.';
-                }
-            }
             
-            // Check browser compatibility
+            
+            
+           
             if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
                 statusDisplay.textContent = 'Your browser does not support audio recording';
                 recordButton.disabled = true;
             }
             
-            // Load recordings on page load
-            //loadRecordings();
+            
             
             recordButton.addEventListener('click', async function() {
                 if (!isRecording) {
-                    // Start recording
+                    
                     try {
                         recordButton.disabled = true;
                         statusDisplay.textContent = 'Requesting microphone access...';
@@ -238,8 +202,6 @@
                                 
                                 if (result.success) {
                                     statusDisplay.textContent = 'Recording saved successfully!';
-                                    
-                                    //loadRecordings();
                                     await fetchAndPlayOutput();
                                 } else {
                                     statusDisplay.textContent = 'Error saving recording: ' + result.error;
@@ -249,12 +211,11 @@
                                 console.error('Error:', error);
                             }
                             
-                            // Stop all audio tracks
                             stream.getTracks().forEach(track => track.stop());
                             recordButton.disabled = false;
                         });
                         
-                        // Start recording with a 1-second interval for data chunks
+                       
                         mediaRecorder.start(1000);
                         isRecording = true;
                         recordButton.textContent = 'Stop Recording';
