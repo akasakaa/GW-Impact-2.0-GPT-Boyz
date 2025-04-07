@@ -1,5 +1,6 @@
 import base64
 import os
+import mongo
 from google import genai
 from google.genai import types
 
@@ -92,6 +93,7 @@ def generate(user_input):
 
     # Add model response to history
     history.append(types.Content(role="model", parts=[types.Part(text=response_text)]))
+    mongo.insertcollection(user_input,response_text)
 
     return response_text
 

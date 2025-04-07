@@ -4,6 +4,7 @@ import datetime
 import STT
 import TTS
 import gemini
+import mongo
 
 app = Flask(__name__)
 
@@ -39,6 +40,7 @@ def save_recording():
         input=(STT.transcribe_audio(file_path))
         output=gemini.generate(input)
         audio=TTS.generate_audio(output)
+        #mongo.insertcollection(input,output)
 
 
 
@@ -97,7 +99,7 @@ def list_files():
             'error': 'Recordings directory does not exist',
             'path': RECORDINGS_DIR
         })
-@app.route('/get_output')
+
 @app.route('/get_output')
 def pushoutput():
     print("Fetching latest output audio...")

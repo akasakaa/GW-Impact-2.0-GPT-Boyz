@@ -1,0 +1,1 @@
+mongo.insertcollection(input,output)
