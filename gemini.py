@@ -79,7 +79,7 @@ def generate(user_input):
     history.append(types.Content(role="user", parts=[types.Part(text=user_input)]))
 
     generate_content_config = types.GenerateContentConfig(
-        response_mime_type="text/plain",max_output_tokens=1000,
+        response_mime_type="text/plain",max_output_tokens=500,
     )
 
     response_text = ""
