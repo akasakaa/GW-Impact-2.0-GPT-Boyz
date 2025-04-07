@@ -7,8 +7,10 @@ import Navbar from "../components/Navbar"
 import { useUserStore } from "../stores/useUserStore";
 
 const DashboardPage = () => {
+  const { sessionCount, incrementSessionCount, logout } = useUserStore();
 
-  const {logout,setUser,user} = useUserStore();
+
+  const {setUser,user} = useUserStore();
 
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -99,7 +101,11 @@ const DashboardPage = () => {
           <button className="bg-teal-600 text-white px-6 py-2 rounded-lg shadow hover:bg-teal-700 transition">
            Start Session
           </button>
-          <button className="bg-red-400 text-white px-6 py-2 rounded-lg shadow hover:bg-red-500 transition">
+          <button className="bg-red-400 text-white px-6 py-2 rounded-lg shadow hover:bg-red-500 transition"
+           onClick={() => {
+    incrementSessionCount();
+    console.log("Session Count is now:", sessionCount);
+  }}>
             End Session
           </button>
         </div>

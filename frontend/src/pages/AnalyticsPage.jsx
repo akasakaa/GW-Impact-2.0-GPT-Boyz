@@ -3,17 +3,73 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import Navbar from "../components/Navbar"
 import { useUserStore } from "../stores/useUserStore";
 const moodData = [
-  { date: "Apr 1", mood: 3 },
-  { date: "Apr 2", mood: 4 },
-  { date: "Apr 3", mood: 2 },
-  { date: "Apr 4", mood: 5 },
-  { date: "Apr 5", mood: 4 },
-  { date: "Apr 6", mood: 3 },
-  { date: "Apr 7", mood: 4 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 3 },
+  { date: "Apr 7", mood: 3 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 3 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 1 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 0 },
+  { date: "Apr 7", mood: 2 },
+  { date: "Apr 7", mood: 0 },
 ];
 
+
 const AnalyticsPage = () => {
-    const {user} = useUserStore();
+    const {user,sessionCount} = useUserStore();
+    
+    
   return (
     
     <div>
@@ -29,7 +85,7 @@ const AnalyticsPage = () => {
             <LineChart data={moodData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" />
-              <YAxis domain={[0, 5]} />
+              <YAxis domain={[0, 3]} />
               <Tooltip />
               <Line
                 type="monotone"
@@ -45,7 +101,7 @@ const AnalyticsPage = () => {
         {/* Session Summary */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gradient-to-br from-[#c0e7eb] to-[#e1f7f4] rounded-2xl p-6 text-center border border-[#b5dee3] shadow">
-            <h3 className="text-2xl font-bold text-teal-700">6</h3>
+            <h3 className="text-2xl font-bold text-teal-700">{sessionCount}</h3>
             <p className="text-sm text-gray-600 mt-1">Sessions This Week</p>
           </div>
 
