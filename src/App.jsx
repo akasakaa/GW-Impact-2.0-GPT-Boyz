@@ -1,4 +1,5 @@
 import {Route,Routes,useNavigate } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -14,19 +15,21 @@ function App() {
 
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const currentPath = location.pathname;
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        if (currentPath === "/" || currentPath === "/auth") {
-          navigate("/dashboard");
-        }
-      } else {
-        if (currentPath !== "/auth") {
-          navigate("/auth");
-        }
+      if (currentPath === "/" || currentPath === "/auth") {
+        navigate("/dashboard");
       }
+    } else {
+      if (currentPath !== "/auth") {
+        navigate("/auth");
+      }
+    }
     });
 
     return () => unsubscribe();
