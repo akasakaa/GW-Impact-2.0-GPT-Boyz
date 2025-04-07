@@ -197,7 +197,7 @@
             }
             
             // Load recordings on page load
-            loadRecordings();
+            //loadRecordings();
             
             recordButton.addEventListener('click', async function() {
                 if (!isRecording) {
@@ -239,7 +239,7 @@
                                 if (result.success) {
                                     statusDisplay.textContent = 'Recording saved successfully!';
                                     
-                                    loadRecordings();
+                                    //loadRecordings();
                                     await fetchAndPlayOutput();
                                 } else {
                                     statusDisplay.textContent = 'Error saving recording: ' + result.error;

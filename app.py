@@ -103,6 +103,7 @@ def list_files():
 @app.route('/get_output')
 def pushoutput():
     print("Fetching latest output audio...")
+    print(mongo.getdata())
 
     recordings = []
 
