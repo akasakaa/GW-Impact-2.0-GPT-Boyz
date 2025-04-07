@@ -23,12 +23,15 @@ const Navbar = () => {
   const handleAnalyticsClick = () => {
     navigate("/analytics");
   };
+  const handleLogout=()=>{
+    logout(navigate);
+  }
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo or App Name */}
-        <Link to={"/dashboard"}>
+        <Link to={"/"}>
          <div className="text-xl font-bold text-teal-700">MindEase</div>
         </Link>
     
@@ -69,7 +72,7 @@ const Navbar = () => {
               </p>
               <p
                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                onClick={logout}
+                onClick={handleLogout}
               >
                 Logout
               </p>

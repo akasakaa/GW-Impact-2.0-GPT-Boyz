@@ -17,7 +17,7 @@ export const useUserStore = create((set, get) => ({
       toast.error("Failed to login", { toastId: "uniqueToastId" });
     }
   },
-  logout : async()=>{
+  logout : async(navigate)=>{
      await signOut(auth);
         navigate("/");
   },

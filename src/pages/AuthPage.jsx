@@ -6,8 +6,10 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const AuthPage = () => {
+    const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,6 +39,8 @@ const AuthPage = () => {
     setLoading(false);
   };
 
+  navigate('/dashboard');
+   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-[#dbeafe] via-[#e0f2fe] to-[#f0fdf4]">
       <div className="bg-white shadow-2xl rounded-3xl p-10 w-[90%] max-w-md">
