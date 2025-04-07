@@ -19,9 +19,13 @@ function App() {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        navigate("/dashboard");
+        if (currentPath === "/" || currentPath === "/auth") {
+          navigate("/dashboard");
+        }
       } else {
-        navigate("/auth");
+        if (currentPath !== "/auth") {
+          navigate("/auth");
+        }
       }
     });
 
@@ -34,7 +38,7 @@ function App() {
           <Route path = '/' element = {<HomePage/>}></Route>
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/dashboard" element={user ? <DashboardPage /> : <AuthPage />} />
-          <Route path = '/analytics' element = {user ? <AnalyticsPage/>: <AuthPage/>}></Route>
+          <Route path = '/analytics' element = {    <AnalyticsPage/> }></Route>
 
         </Routes>
         <Toaster />

@@ -4,9 +4,12 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import VoiceRecorder from "../components/VoiceRecorder";
 import Navbar from "../components/Navbar"
+import { useUserStore } from "../stores/useUserStore";
 
 const DashboardPage = () => {
-  const [user, setUser] = useState(null);
+
+  const {logout,setUser,user} = useUserStore();
+
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -22,6 +25,7 @@ const DashboardPage = () => {
 
   const handleLogout = async () => {
     await signOut(auth);
+    logout();
     navigate("/");
   };
 
@@ -93,7 +97,7 @@ const DashboardPage = () => {
         {/* Actions */}
         <div className="flex justify-center gap-6">
           <button className="bg-teal-600 text-white px-6 py-2 rounded-lg shadow hover:bg-teal-700 transition">
-          🎙️
+           Start Session
           </button>
           <button className="bg-red-400 text-white px-6 py-2 rounded-lg shadow hover:bg-red-500 transition">
             End Session
