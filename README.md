@@ -13,15 +13,16 @@ An AI-powered web application designed to provide mental health support through 
 
 ## 🛠️ Tech Stack
 
-| Layer           | Technology                 |
-|----------------|-----------------------------|
-| Frontend        | React.js, Material UI       |
-| Backend         | Flask (Python)              |
-| Speech-to-Text  | Whisper / SpeechRecognition |
-| Text-to-Speech  | ElevenLabs API              |
-| AI Model        | Gemini Pro (Google AI)      |
-| Database        | MongoDB (for logs & stats)  |
-| Deployment      | Flask server + static build |
+| Layer           | Technology                         |
+|----------------|-----------------------------        |
+| Frontend        | React.js, Material UI              |
+| Backend         | Flask (Python)                     |
+| Speech-to-Text  | Whisper / SpeechRecognition        |
+| Text-to-Speech  | ElevenLabs API                     |
+| AI Model        | Gemini Pro (Google AI) +           |
+|                 | wav2vec2-speech-emotion-recognition|
+| Database        | MongoDB (for logs & stats)         |
+| Deployment      | Flask server + static build        |
 
 ## ⚙️ How It Works
 
