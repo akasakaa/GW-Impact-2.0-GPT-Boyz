@@ -50,6 +50,6 @@ git clone https://github.com/akasakaa/GW-Impact-2.0-GPT-Boyz.git
 
 **Future Enhancements**
 
--User journaling and long-term mental wellness tracking
--Emergency contact alert system
--Language and cultural adaptation
+- User journaling and long-term mental wellness tracking.
+- Emergency contact alert system.
+- Language and cultural adaptation.
