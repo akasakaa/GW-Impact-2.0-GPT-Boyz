@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import VoiceRecorder from "../components/VoiceRecorder";
 import Navbar from "../components/Navbar"
 import { useUserStore } from "../stores/useUserStore";
+import { motion } from "motion/react";
 
 const DashboardPage = () => {
   const { sessionCount, incrementSessionCount, logout } = useUserStore();
@@ -40,7 +41,12 @@ const DashboardPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#dceff5] to-[#f5f8fa] flex items-center justify-center p-4">
+    <motion.div 
+    initial={{ opacity: 0.2, y: 100 }}
+    transition={{ duration: 1 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false }}
+    className="min-h-screen bg-gradient-to-br from-[#dceff5] to-[#f5f8fa] flex items-center justify-center p-4">
       <Navbar/>
       <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl p-6 md:p-10 space-y-6">
 
@@ -110,7 +116,7 @@ const DashboardPage = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

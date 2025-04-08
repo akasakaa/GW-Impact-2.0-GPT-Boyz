@@ -1,14 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./FooterPage";
-
+import { motion } from "motion/react";
+import TestimonialSlider from "./TestimonialSlider";
 const HomePage = () => {
   return (
     <div className="bg-gradient-to-br from-cyan-50 via-blue-100 to-teal-100 text-gray-800 font-sans">
       
       {/* Hero Section */}
       <section className="py-24 px-6 bg-gradient-to-b from-teal-50 to-cyan-100">
-        <div className="max-w-7xl mx-auto text-center px-4 md:px-8">
+        <motion.div 
+         initial={{ opacity: 0.2, y: 100 }}
+         transition={{ duration: 1 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: false }}
+        
+        className="max-w-7xl mx-auto text-center px-4 md:px-8">
           <h1 className="text-4xl md:text-6xl font-extrabold text-teal-700 mb-6 drop-shadow-sm">
             Welcome to MindEase
           </h1>
@@ -21,12 +28,18 @@ const HomePage = () => {
           >
             Get Started
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-r from-white to-sky-50 px-6">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div 
+        
+        initial={{ opacity: 0.2, y: 100 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        className="max-w-7xl mx-auto px-4 md:px-8">
           <h2 className="text-3xl font-bold text-center text-teal-700 mb-14">
             What We Offer
           </h2>
@@ -60,12 +73,18 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* About / Why Us Section */}
       <section className="py-20 bg-gradient-to-br from-teal-700 to-cyan-600 text-white px-6">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+        <motion.div
+
+initial={{ opacity: 0.2, y: 100 }}
+transition={{ duration: 1 }}
+whileInView={{ opacity: 1, y: 0 }}
+viewport={{ once: false }}
+         className="max-w-7xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Why MindEase?</h2>
           <p className="text-lg max-w-3xl mx-auto mb-8">
             In a fast-paced world, MindEase is your safe space to reflect, talk, and grow with the help of AI. Designed for mental wellness, privacy, and peace.
@@ -75,12 +94,20 @@ const HomePage = () => {
             <span className="bg-white text-teal-700 font-semibold py-2 px-4 rounded-full shadow-md">🔒 100% Private</span>
             <span className="bg-white text-teal-700 font-semibold py-2 px-4 rounded-full shadow-md">📱 Mobile Ready</span>
           </div>
-        </div>
+        </motion.div>
       </section>
+
+
+<TestimonialSlider/>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-cyan-50 to-white px-6">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+        <motion.div
+         initial={{ opacity: 0.2, y: 100 }}
+         transition={{ duration: 1 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: false }}
+        className="max-w-7xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-3xl font-bold text-teal-700 mb-4">
             Ready to take care of your mind?
           </h2>
@@ -91,7 +118,7 @@ const HomePage = () => {
           >
             Sign Up Free
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />

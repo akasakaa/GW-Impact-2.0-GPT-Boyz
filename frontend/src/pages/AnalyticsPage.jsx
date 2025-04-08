@@ -2,6 +2,9 @@ import React from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import Navbar from "../components/Navbar"
 import { useUserStore } from "../stores/useUserStore";
+
+
+import { motion } from "motion/react";
 const moodData = [
   { date: "Apr 7", mood: 2 },
   { date: "Apr 7", mood: 1 },
@@ -74,7 +77,13 @@ const AnalyticsPage = () => {
     
     <div>
         <Navbar   />
-        <div className="min-h-screen bg-gradient-to-br from-[#dceff5] to-[#f5f8fa] p-6 mt-14">
+        <motion.div 
+        
+        initial={{ opacity: 0.2, y: 100 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        className="min-h-screen bg-gradient-to-br from-[#dceff5] to-[#f5f8fa] p-6 mt-14">
       <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-3xl p-8 space-y-8">
         <h1 className="text-3xl font-bold text-teal-700">Your Analytics</h1>
 
@@ -137,7 +146,7 @@ const AnalyticsPage = () => {
           </p>
         </div>
       </div>
-     </div>
+     </motion.div>
     </div>
     
   );
