@@ -53,3 +53,37 @@ git clone https://github.com/akasakaa/GW-Impact-2.0-GPT-Boyz.git
 - User journaling and long-term mental wellness tracking.
 - Emergency contact alert system.
 - Language and cultural adaptation.
+
+
+Demonstration:
+Landing Page:
+![image](https://github.com/user-attachments/assets/ffc186b3-603a-4a80-a31e-7661c1ccccae)
+![image](https://github.com/user-attachments/assets/65352761-bb6e-4a4f-b878-7f4660147f2a)
+![image](https://github.com/user-attachments/assets/caf56a94-2467-47a0-9f80-428fdf9c892e)
+
+Signup/Login Page:
+![image](https://github.com/user-attachments/assets/f9ccbb80-7c8a-4ffc-92f3-346ae5bfebab)
+
+Dashboard Page:
+![image](https://github.com/user-attachments/assets/8b4bd995-18e6-4459-a821-95cb27d80577)
+When User starts recording:
+![image](https://github.com/user-attachments/assets/7f4da51c-349b-40ef-b218-601dd5da1d16)
+When User stops recording, the AI model is processing the input to come up with a speech output.
+![image](https://github.com/user-attachments/assets/ad85f733-aef9-4f7f-ae5b-1bc8d17eca6c)
+
+Simple Navbar:
+Consisting of the dashboard, settings, logout and analytics pages.
+![image](https://github.com/user-attachments/assets/e9667930-90bf-459c-ad34-57212cc24a8a)
+
+Settings Page:
+![image](https://github.com/user-attachments/assets/abf76a39-db27-4de3-8fb6-2bdc0aaaeda3)
+![image](https://github.com/user-attachments/assets/3b665a7d-fa9c-44b3-b2a9-3bf6702bcc78)
+
+Analytics Page:
+A line graph to visualize mood trends throughout the week.
+![image](https://github.com/user-attachments/assets/0f89ac41-8322-4bf9-b28e-035ddfd7453f)
+
+
+
+
+
